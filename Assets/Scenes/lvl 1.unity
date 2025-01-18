@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_TagString
+      value: Ring
+      objectReference: {fileID: 0}
     - target: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -364,6 +368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_TagString
+      value: Ring
+      objectReference: {fileID: 0}
     - target: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -504,6 +512,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
   m_PrefabInstance: {fileID: 1068053583}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &702580671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134156, guid: d45cd38fab4caff4fb282fac230099ff, type: 3}
+  m_PrefabInstance: {fileID: 1141916465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &702580672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702580671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfcae86054593984c8bde188f0b8b6d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &702580674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702580671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b845880262eeb4b908a08b86b7bc7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &702580675
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702580671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.669875, y: 1.02595, z: 9.695585}
+  m_Center: {x: 0.49424016, y: 0.012975097, z: -0.2911005}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ring (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_TagString
+      value: Ring
+      objectReference: {fileID: 0}
     - target: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -892,7 +954,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 134156, guid: d45cd38fab4caff4fb282fac230099ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 702580672}
+    - targetCorrespondingSourceObject: {fileID: 134156, guid: d45cd38fab4caff4fb282fac230099ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 702580674}
+    - targetCorrespondingSourceObject: {fileID: 134156, guid: d45cd38fab4caff4fb282fac230099ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 702580675}
   m_SourcePrefab: {fileID: 100100000, guid: d45cd38fab4caff4fb282fac230099ff, type: 3}
 --- !u!1001 &1311684700
 PrefabInstance:
@@ -905,6 +976,10 @@ PrefabInstance:
     - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_Name
       value: Ring (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_TagString
+      value: Ring
       objectReference: {fileID: 0}
     - target: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_LocalScale.x
@@ -1132,6 +1207,10 @@ PrefabInstance:
     - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_Name
       value: Ring (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015780934767744, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
+      propertyPath: m_TagString
+      value: Ring
       objectReference: {fileID: 0}
     - target: {fileID: 4122938131327598, guid: a37573ad5d3fb7a47997aadbf0976202, type: 3}
       propertyPath: m_LocalScale.x
