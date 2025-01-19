@@ -1,41 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+// Определение класса Score, который наследует MonoBehaviour
+using TMPro;
 using UnityEngine;
-using TMPro; // Добавьте это для использования TextMeshPro компонентов
 
 public class Score : MonoBehaviour
 {
-    // Переменная для хранения количества собранных колец
-    private int ring = 0;
-
-    // Ссылка на компонент TextMeshProUGUI для отображения очков
+    // Публичное поле для отображения текста счета
     public TextMeshProUGUI scoreText;
 
-    // Метод OnTriggerExit вызывается, когда объект покидает триггерную область
-    private void OnTriggerExit(Collider other)
+    // Приватное поле для хранения массива объектов колец
+    private GameObject[] rings;
+
+    // Приватное поле для хранения количества колец
+    private int ring;
+
+    // Метод Start вызывается перед первым обновлением кадра
+    private void Start()
     {
-        // Проверяем, имеет ли объект, покинувший триггерную область, тег "Ring"
-        if (other.gameObject.CompareTag("Ring"))
-        {
-            // Увеличиваем счетчик колец
-            ring++;
+        // Поиск всех объектов с тегом "Ring"
+        rings = GameObject.FindGameObjectsWithTag("Ring");
 
-            // Уничтожаем объект кольца
-            Destroy(other.gameObject);
+        // Установка количества колец
+        ring = rings.Length;
 
-            // Обновляем текст на UI
-            UpdateScoreText();
-        }
+        // Обновление текста счета
+        scoreText.text = ring.ToString();
     }
 
-    // Метод для обновления текста очков на UI
-    private void UpdateScoreText()
+    // Метод OnTriggerExit вызывается, когда коллайдер покидает триггер
+    private void OnTriggerExit(Collider other)
     {
-        // Проверяем, что ссылка на компонент TextMeshProUGUI не пустая
-        if (scoreText != null)
+        // Проверка, является ли объект кольцом
+        if (other.gameObject.CompareTag("Ring"))
         {
-            // Обновляем текст на UI
-            scoreText.text = "Rings: " + ring.ToString();
+            // Уменьшение количества колец
+            ring--;
+
+            // Обновление текста счета
+            scoreText.text = ring.ToString();
+
+            // Уничтожение объекта кольца
+            Destroy(other.gameObject);
         }
     }
 }

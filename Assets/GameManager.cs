@@ -1,29 +1,40 @@
-using System.Collections;
-using UnityEngine;
+// Определение класса GameManager, который наследует MonoBehaviour
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private int currentLevel = 0; // Текущий уровень
+    // Приватное поле для хранения текущего уровня
+    private int currentLevel = 0;
 
-    // Метод вызывается при уничтожении объекта с тегом "Ring"
-    public void OnRingCollected()
+    // Метод Update вызывается каждый кадр
+    void Update()
     {
-        // Проверяем, остались ли кольца
-        if (GameObject.FindGameObjectsWithTag("Ring").Length == 0)
+        // Проверка, собраны ли все кольца
+        if (CheckRings())
         {
-            LoadNextLevel(); // Загружаем следующий уровень
+            // Если все кольца собраны, переходим к следующему уровню
+            NextLevel();
         }
     }
 
-    // Метод для загрузки следующего уровня
-    private void LoadNextLevel()
+    // Метод для проверки, собраны ли все кольца
+    bool CheckRings()
     {
-        currentLevel++;
-        if (currentLevel >= SceneManager.sceneCountInBuildSettings)
-        {
-            currentLevel = 0; // Сбрасываем уровень, если вышли за пределы
-        }
+        // Поиск всех объектов с тегом "Ring"
+        GameObject[] rings = GameObject.FindGameObjectsWithTag("Ring");
+
+        // Если нет объектов с тегом "Ring", значит все кольца собраны
+        return rings.Length == 0;
+    }
+
+    // Метод для перехода на следующий уровень
+    void NextLevel()
+    {
+        // Увеличение текущего уровня на 1
+        currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+        // Загрузка следующего уровня
         SceneManager.LoadScene(currentLevel);
     }
 }
