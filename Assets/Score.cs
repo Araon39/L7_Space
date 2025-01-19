@@ -1,17 +1,26 @@
-// Определение класса Score, который наследует MonoBehaviour
-using TMPro;
+// Используемые пространства имен
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
+// Определение класса Score, который наследует MonoBehaviour
 public class Score : MonoBehaviour
 {
-    // Публичное поле для отображения текста счета
+    // Публичное поле для отображения текста текущего счета
     public TextMeshProUGUI scoreText;
+
+    // Публичное поле для отображения текста лучшего счета
+    public TextMeshProUGUI bestScoreText;
 
     // Приватное поле для хранения массива объектов колец
     private GameObject[] rings;
 
     // Приватное поле для хранения количества колец
     private int ring;
+
+    // Публичное статическое поле для хранения лучшего счета
+    public static int countRings = 0;
 
     // Метод Start вызывается перед первым обновлением кадра
     private void Start()
@@ -22,8 +31,11 @@ public class Score : MonoBehaviour
         // Установка количества колец
         ring = rings.Length;
 
-        // Обновление текста счета
+        // Обновление текста текущего счета
         scoreText.text = ring.ToString();
+
+        // Обновление текста лучшего счета
+        bestScoreText.text = countRings.ToString();
     }
 
     // Метод OnTriggerExit вызывается, когда коллайдер покидает триггер
@@ -32,11 +44,17 @@ public class Score : MonoBehaviour
         // Проверка, является ли объект кольцом
         if (other.gameObject.CompareTag("Ring"))
         {
+            // Увеличение счетчика собранных колец
+            countRings++;
+
             // Уменьшение количества колец
             ring--;
 
-            // Обновление текста счета
+            // Обновление текста текущего счета
             scoreText.text = ring.ToString();
+
+            // Обновление текста лучшего счета
+            bestScoreText.text = countRings.ToString();
 
             // Уничтожение объекта кольца
             Destroy(other.gameObject);
