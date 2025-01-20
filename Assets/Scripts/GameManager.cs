@@ -37,4 +37,14 @@ public class GameManager : MonoBehaviour
         // Загрузка следующего уровня
         SceneManager.LoadScene(currentLevel);
     }
+
+    // Метод для перезагрузки сцены
+    public void RestartGame()
+    {
+        // Получаем текущую сцену
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        // Перезагружаем текущую сцену
+        SceneManager.LoadScene(currentScene.name);
+    }
 }
